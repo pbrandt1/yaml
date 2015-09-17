@@ -1,7 +1,7 @@
 #include "yaml.h"
 #include "stdio.h"
 
-void yaml_read(char *file, hash_t *self) {
+hash_t * yaml_read(char *file) {
   printf("file %s\n", file);
   char* yaml = file;
   char* this_line;
@@ -14,13 +14,13 @@ void yaml_read(char *file, hash_t *self) {
     perror(file);
   }
 
-  hash_t *current_hash = self;
+  hash_t *current_hash = hash_new();
   char key[256];
   strcpy(key, "");
   int previous_indent = 0;
   int arrayIndex = 0;
   size_t len;
-  while (this_line = fgets(tmp2, 256, f)) {
+  while ((this_line = fgets(tmp2, 256, f))) {
     tmp[0] = '\0';
 
     // compute the indentation level
@@ -109,10 +109,10 @@ void yaml_read(char *file, hash_t *self) {
     strcpy(hashval, tmp);
 
     if (strcmp(tmp, "") != 0) {
-      hash_set(self, hashkey, hashval);
+      hash_set(current_hash, hashkey, hashval);
     }
-
   }
+  return current_hash;
 }
 
 

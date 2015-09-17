@@ -2,8 +2,7 @@
 #include "yaml.h"
 
 int main(int argc, char *argv[]) {
-  hash_t *yaml = hash_new();
-  yaml_read("test.yaml", yaml);
+  hash_t *yaml = yaml_read("test.yaml");
   hash_each(yaml, {
     printf("%s: %s\n", key, (char *) val);
   });

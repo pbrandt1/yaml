@@ -17,15 +17,10 @@ app:
   port: 8080
 ```
 
-_test.c_
+in _test.c_
 ```c
-#include "deps/yaml/yaml.h"
-
-int main() {
-  hash_t *config;
-  yaml_read("test.yaml", config);
-  printf("app listening on port %s\n", (char *)hash_get(config, "app.port"));
-}
+hash_t *config = yaml_read("test.yaml");
+printf("app listening on port %s\n", (char *)hash_get(config, "app.port"));
 ```
 
 Uses [clibs/hash](https://github.com/clibs/hash).

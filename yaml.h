@@ -3,6 +3,6 @@
 
 #include "deps/hash/hash.h"
 
-void yaml_read(char *file, hash_t *self);
+hash_t * yaml_read(char *file);
 
 #endif
