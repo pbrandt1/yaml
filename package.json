@@ -1,0 +1,11 @@
+{
+  "name": "yaml",
+  "version": "1.0.0",
+  "repo": "pbrandt1/yaml",
+  "description": "parse a yaml file into a hash",
+  "keywords": ["yaml", "markup", "config"],
+  "license": "MIT",
+  "dependencies": {
+    "clibs/hash": "0.0.1"
+  }
+}

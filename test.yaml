@@ -1,0 +1,10 @@
+mongodb:
+  url: localhost/foundry
+  port: 27017
+elasticsearch:
+  url: something.com
+  port: 9200
+# i like flavors
+flavors:
+  - red
+  - blue
